@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+/* NavBar */
+.navbar {
+    background-color: rgb(57, 58, 57);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.2rem 2rem;
+    z-index: 9999;
+    width: 100%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.navbar a {
+    font-weight: 500;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+}
+
+.navbar a:hover {
+    color: rgb(201, 194, 194);
+}
+
+
+.button a:link,
+a:visited {
+    font-size: 1.1rem;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 3px 5px;
+    display: block;
+}
+
+.button a:hover {
+    background-color: green;
+    color: rgb(177, 169, 169);
+}
+
+.navbarTop {
+    width: 100%;
+    color: #333;
+    padding: 10px 20px;
+    background-color: rgb(72, 162, 214);
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    width: 105px;
+}
+
+.details {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Hamburger */
+.open-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Sliding Gallary */
+.gallary {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+}
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 1s;
+}
+
+/* Manual navigation of slide */
+.manual-navigation {
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid rgb(72, 162, 214);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 20px;
+}
+
+.manual-btn:hover {
+    background-color: #333;
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40%;
+}
+
+/* Automatic Navigation of Sliding Gallary */
+.auto-navigation {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.auto-navigation div {
+    border: 2px solid rgb(72, 162, 214);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.auto-navigation div:not(:last-child) {
+    margin-right: 20px;
+}
+
+#radio1:checked~.auto-navigation .auto-btn1 {
+    background: #333;
+}
+
+#radio2:checked~.auto-navigation .auto-btn2 {
+    background: #333;
+}
+
+#radio3:checked~.auto-navigation .auto-btn3 {
+    background: #333;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 40px 10px 40px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.address,
+.contact,
+.map {
+    padding: 20px;
+}
+
+.footer-bottom {
+    padding: 15px;
+    text-align: center;
+    /* background-color: rgb(72, 162, 214); */
+    color: #fff;
+}
+
+@media screen and (max-width: 740px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 2rem;
+        transition: 1s;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .navbar li {
+        padding: 0.6rem 0rem;
+    }
+
+    .open-menu {
+        display: block;
+    }
+
+    .details {
+        display: none;
+    }
+
+    .title {
+        font-size: 12px;
+        line-height: 25px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 20%;
+    }
+
+}
